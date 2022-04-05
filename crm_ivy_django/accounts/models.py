@@ -27,6 +27,17 @@ class Customer(models.Model):
         return self.name
 
 
+class Tag(models.Model):
+    name = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     NAME_MAX_LEN = 200
     CATEGORY_CHOICES = ['Indoor', 'Out Door']
@@ -53,6 +64,10 @@ class Product(models.Model):
         auto_now_add=True,
     )
 
+    tags = models.ManyToManyField(
+        Tag,
+    )
+
     def __str__(self):
         return self.name
 
@@ -68,5 +83,14 @@ class Order(models.Model):
         null=True,
         blank=True,
     )
-    # products =
-    # customer =
+    products = models.ForeignKey(
+        Product,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+    customer = models.ForeignKey(
+        Customer,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+

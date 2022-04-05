@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from crm_ivy_django.accounts.models import Customer, Product, Order
+from crm_ivy_django.accounts.models import Customer, Product, Order, Tag
 
 
 @admin.register(Customer)
@@ -15,4 +15,9 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
     pass
