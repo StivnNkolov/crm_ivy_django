@@ -94,3 +94,5 @@ class Order(models.Model):
         on_delete=models.SET_NULL,
     )
 
+    def __str__(self):
+        return self.products.name

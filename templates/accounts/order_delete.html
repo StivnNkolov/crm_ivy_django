@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block start %}
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body">
+
+                <p>Are you sure you want to delete {{ order }}</p>
+                <form action="{% url 'order delete' order.id %}" method="POST">
+                    {% csrf_token %}
+                    <a class="btn btn-warning" href="{% url 'index' %}">Cancel</a>
+                    <input class="btn btn-danger" type="submit">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}
