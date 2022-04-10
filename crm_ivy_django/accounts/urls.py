@@ -7,7 +7,7 @@ urlpatterns = [
     path('products/', products, name='products'),
     path('customer/<int:pk>/', customer, name='customers'),
 
-    path('order_create/', order_create, name='order create'),
+    path('order_create/<int:pk>/', order_create, name='order create'),
     path('order_edit/<int:pk>/', order_edit, name='order edit'),
     path('order_delete/<int:pk>/', order_delete, name='order delete'),
 ]
