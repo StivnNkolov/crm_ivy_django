@@ -16,6 +16,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_filters',
+
     'crm_ivy_django.accounts',
 ]
 
